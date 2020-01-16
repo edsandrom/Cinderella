@@ -1,0 +1,2918 @@
+#<LoginWindow>: # Login Window
+#    name: "login"
+#    userName: userNameTextInput
+#    password: passwordTextInput
+#
+#    FloatLayout:
+#        Label:
+#            text: "User Name: "
+#            font_size: 0.9*self.height
+#            pos_hint: {"x":0.1, "top":0.9}
+#            size_hint: 0.35, 0.15
+#
+#        TextInput:
+#            id: userNameTextInput
+#            font_size: 0.9*self.height
+#            write_tab: False
+#            focus: True
+#            multiline: False
+#            on_text_validate: root.loginButton()
+#            focus_set: True
+#            pos_hint: {"x": 0.55 , "top":0.9}
+#            size_hint: 0.4, 0.15
+#
+#        Label:
+#            text: "Password: "
+#            font_size: 0.9*self.height
+#            pos_hint: {"x":0.1, "top":0.7}
+#            size_hint: 0.35, 0.15
+#
+#        TextInput:
+#            id: passwordTextInput
+#            font_size: 0.9*self.height
+#            write_tab: False
+#            multiline: False
+#            on_text_validate: root.loginButton()
+#            password: True
+#            pos_hint: {"x": 0.55, "top":0.7}
+#            size_hint: 0.4, 0.15
+#
+#        Button:
+#            pos_hint:{"x":0.2,"y":0.05}
+#            size_hint: 0.6, 0.2
+#            font_size: (root.width**2 + root.height**2) / 13**4
+#            text: "Login"
+#            on_release:
+#                root.manager.transition.direction = "up"
+#                root.loginButton()
+
+#<MainWindow>: # Cinderella Window
+#    name: 'main'
+#    FloatLayout:
+#        Button:
+#            id: roomsListButton
+#            pos_hint: {"x": 0.10, "top": 0.9}
+#            size_hint: 0.20, 0.20
+#            font_size: 0.15*self.height
+#            text: "Rooms List"
+#            on_release:
+#                root.manager.transition.direction = "down"
+#                app.root.current = 'roomsList'
+#
+
+<HousekeepingReportWindow>
+    name:'hkReport'
+
+<SpinnerOption>:
+    size: 20, 20
+
+# I Cannot loop to create all rooms because some rooms (number) are skipped in this hotel
+
+<roomsListWindow>:            # Today's rooms List
+    name: 'roomsList'
+    GridLayout:
+        orientation: 'vertical'
+        rows: 45
+        cols: 10
+        Label:
+            text: '102'
+        Spinner:
+            name: '102'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '210'
+        Spinner:
+            name: '210'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '258'
+        Spinner:
+            name: '258'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '333'
+        Spinner:
+            name: '333'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '281'
+        Spinner:
+            name: '281'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '103'
+        Spinner:
+            name: '103'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '211'
+        Spinner:
+            name: '211'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '259'
+        Spinner:
+            name: '259'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '334'
+
+        Spinner:
+            name: '334'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '282'
+#
+        Spinner:
+            name: '282'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '104'
+        Spinner:
+            name: '104'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '212'
+        Spinner:
+            name: '212'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '260'
+        Spinner:
+            name: '260'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '335'
+        Spinner:
+            name: '335'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '283'
+        Spinner:
+            name: '283'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '105'
+        Spinner:
+            name: '105'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '214'
+        Spinner:
+            name: '214'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '261'
+        Spinner:
+            name: '261'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '336'
+        Spinner:
+            name: '336'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '284'
+        Spinner:
+            name: '284'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '106'
+        Spinner:
+            name: '106'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '215'
+        Spinner:
+            name: '215'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '262'
+        Spinner:
+            name: '262'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '337'
+        Spinner:
+            name: '337'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '285'
+        Spinner:
+            name: '285'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '107'
+        Spinner:
+            name: '107'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '217'
+        Spinner:
+            name: '217'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '263'
+        Spinner:
+            name: '263'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '338'
+        Spinner:
+            name: '338'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '286'
+        Spinner:
+            name: '286'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '108'
+        Spinner:
+            name: '108'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '218'
+        Spinner:
+            name: '218'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '264'
+        Spinner:
+            name: '264'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '339'
+        Spinner:
+            name: '339'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '287'
+        Spinner:
+            name: '287'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '109'
+        Spinner:
+            name: '109'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '219'
+        Spinner:
+            name: '219'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '265'
+        Spinner:
+            name: '265'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '340'
+        Spinner:
+            name: '340'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '288'
+        Spinner:
+            name: '288'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '110'
+        Spinner:
+            name: '110'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '220'
+        Spinner:
+            name: '220'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '266'
+        Spinner:
+            name: '266'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '341'
+        Spinner:
+            name: '341'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '381'
+        Spinner:
+            name: '381'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '111'
+        Spinner:
+            name: '111'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '221'
+        Spinner:
+            name: '221'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '267'
+        Spinner:
+            name: '267'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '342'
+        Spinner:
+            name: '342'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '382'
+        Spinner:
+            name: '382'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '112'
+        Spinner:
+            name: '112'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '222'
+        Spinner:
+            name: '222'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '268'
+        Spinner:
+            name: '268'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '343'
+        Spinner:
+            name: '343'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '383'
+        Spinner:
+            name: '383'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '114'
+        Spinner:
+            name: '114'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '223'
+        Spinner:
+            name: '223'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '224'
+        Spinner:
+            name: '224'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '345'
+        Spinner:
+            name: '345'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '384'
+        Spinner:
+            name: '384'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '115'
+        Spinner:
+            name: '115'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '224'
+        Spinner:
+            name: '224'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '269'
+        Spinner:
+            name: '269'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '345'
+        Spinner:
+            name: '345'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '385'
+        Spinner:
+            name: '385'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '116'
+        Spinner:
+            name: '116'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '225'
+        Spinner:
+            name: '225'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '270'
+        Spinner:
+            name: '270'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '346'
+        Spinner:
+            name: '346'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '386'
+        Spinner:
+            name: '386'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '117'
+        Spinner:
+            name: '117'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '226'
+        Spinner:
+            name: '226'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '301'
+        Spinner:
+            name: '301'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '347'
+        Spinner:
+            name: '347'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '387'
+        Spinner:
+            name: '387'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '119'
+        Spinner:
+            name: '119'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '227'
+        Spinner:
+            name: '227'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '302'
+        Spinner:
+            name: '302'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '348'
+        Spinner:
+            name: '348'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '388'
+        Spinner:
+            name: '388'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '120'
+        Spinner:
+            name: '120'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '227'
+        Spinner:
+            name: '227'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '303'
+        Spinner:
+            name: '303'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '349'
+        Spinner:
+            name: '349'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '481'
+        Spinner:
+            name: '481'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '121'
+        Spinner:
+            name: '121'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '228'
+        Spinner:
+            name: '228'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '304'
+        Spinner:
+            name: '304'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '350'
+        Spinner:
+            name: '350'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '482'
+        Spinner:
+            name: '482'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '122'
+        Spinner:
+            name: '122'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '229'
+        Spinner:
+            name: '229'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '305'
+        Spinner:
+            name: '305'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '351'
+        Spinner:
+            name: '351'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '483'
+        Spinner
+            name: '483'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '123'
+        Spinner:
+            name: '123'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '230'
+        Spinner:
+            name: '230'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '306'
+        Spinner:
+            name: '306'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '352'
+        Spinner:
+            name: '352'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '484'
+        Spinner:
+            name: '484'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '124'
+        Spinner:
+            name: '124'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '231'
+        Spinner:
+            name: '231'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '307'
+        Spinner:
+            name: '307'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '353'
+        Spinner:
+            name: '353'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '485'
+        Spinner:
+            name: '485'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '125'
+        Spinner:
+            name: '125'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '232'
+        Spinner:
+            name: '232'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '308'
+        Spinner:
+            name: '308'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '354'
+        Spinner:
+            name: '354'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '486'
+        Spinner:
+            name: '486'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '126'
+        Spinner:
+            name: '126'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '233'
+        Spinner:
+            name: '233'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '309'
+        Spinner:
+            name: '309'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '355'
+        Spinner:
+            name: '355'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '487'
+        Spinner:
+            name: '487'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '128'
+        Spinner:
+            name: '128'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '235'
+        Spinner:
+            name: '235'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '310'
+        Spinner:
+            name: '310'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '356'
+        Spinner:
+            name: '356'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '488'
+        Spinner:
+            name: '488'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+            #
+        Label:
+            text: '129'
+        Spinner:
+            name: '129'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '236'
+        Spinner:
+            name: '236'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '311'
+        Spinner:
+            name: '311'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '357'
+        Spinner:
+            name: '357'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '130'
+        Spinner:
+            name: '130'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '237'
+        Spinner:
+            name: '237'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '312'
+        Spinner:
+            name: '312'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '358'
+        Spinner:
+            name: '358'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '131'
+        Spinner:
+            name: '131'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '238'
+        Spinner:
+            name: '238'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '314'
+        Spinner:
+            name: '314'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '359'
+        Spinner:
+            name: '359'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '132'
+        Spinner:
+            name: '132'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '239'
+        Spinner:
+            name: '239'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '315'
+        Spinner:
+            name: '315'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '360'
+        Spinner:
+            name: '360'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '133'
+        Spinner:
+            name: '133'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '240'
+        Spinner:
+            name: '240'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '316'
+        Spinner:
+            name: '316'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '361'
+        Spinner:
+            name: '361'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '134'
+        Spinner:
+            name: '134'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '241'
+        Spinner:
+            name: '241'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '317'
+        Spinner:
+            name: '317'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '362'
+        Spinner:
+            name: '362'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+#
+        Label:
+            text: '135'
+        Spinner:
+            name: '135'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '242'
+        Spinner:
+            name: '242'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '318'
+        Spinner:
+            name: '318'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '363'
+        Spinner:
+            name: '363'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '136'
+        Spinner:
+            name: '136'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '243'
+        Spinner:
+            name: '243'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '319'
+        Spinner:
+            name: '319'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '364'
+        Spinner:
+            name: '364'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '137'
+        Spinner:
+            name: '137'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '245'
+        Spinner:
+            name: '245'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '320'
+        Spinner:
+            name: '320'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '365'
+        Spinner:
+            name: '365'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '138'
+        Spinner:
+            name: '138'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '246'
+        Spinner:
+            name: '246'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '321'
+        Spinner:
+            name: '321'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '366'
+        Spinner:
+            name: '366'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '139'
+        Spinner:
+            name: '139'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '247'
+        Spinner:
+            name: '247'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '322'
+        Spinner:
+            name: '322'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '367'
+        Spinner:
+            name: '367'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '201'
+        Spinner:
+            name: '201'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '248'
+        Spinner:
+            name: '248'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '323'
+        Spinner:
+            name: '323'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '368'
+        Spinner:
+            name: '368'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '202'
+        Spinner:
+            name: '202'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '249'
+        Spinner:
+            name: '249'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '324'
+        Spinner:
+            name: '324'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '369'
+        Spinner:
+            name: '369'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '203'
+        Spinner:
+            name: '203'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '250'
+        Spinner:
+            name: '250'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '325'
+        Spinner:
+            name: '325'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '370'
+        Spinner:
+            name: '270'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '204'
+        Spinner:
+            name: '204'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '251'
+        Spinner:
+            name: '251'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '326'
+        Spinner:
+            name: '326'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '371'
+        Spinner:
+            name: '371'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '205'
+        Spinner:
+            name: '205'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '252'
+        Spinner:
+            name: '252'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '327'
+        Spinner:
+            name: '327'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '372'
+        Spinner:
+            name: '372'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+            #
+        Label:
+            text: '206'
+        Spinner:
+            name: '206'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '253'
+        Spinner:
+            name: '253'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '328'
+        Spinner:
+            name: '328'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '373'
+        Spinner:
+            name: '373'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '# of Housekeepers'
+        Spinner:
+            name: 'hkSpinner'
+            id: hkSpinner
+            text: ' '
+            text_autoupdate: True
+            values:'1', '20', '19', '18', '17', '16', '15', '14', '13', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2'
+            size: 100, 11
+#            on_text: root.printHKNumber(self.text)
+        Label:
+            text: '207'
+        Spinner:
+            name: '207'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '254'
+        Spinner:
+            name: '254'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '329'
+        Spinner:
+            name: '329'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '374'
+        Spinner:
+            name: '374'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Spinner:
+            text:''
+            size: 100, 11
+
+            opacity: 0
+            enabled: False
+                #
+        Label:
+            text: '208'
+        Spinner:
+            name: '208'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '255'
+        Spinner:
+            name: '255'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '330'
+        Spinner:
+            name: '330'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '375'
+        Spinner:
+            name: '375'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+                #
+        Button:
+            id: hkReportButton
+            text: 'Generate Report'
+            background_color:
+            size: 100, 30
+            on_release:
+                root.printHKNumber(hkSpinner.text)
+#                root.manager.transition.direction = "up"
+#                root.getStays()
+#                root.getCheckouts()
+#                root.calcRoomsPerHK()
+
+        Label:
+            text: '209'
+        Spinner:
+            name: '209'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '256'
+        Spinner:
+            name: '256'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '331'
+        Spinner:
+            name: '331'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '376'
+        Spinner:
+            name: '376'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+                #
+        Button:
+            id: backButton
+            text: 'Quit'
+            size: 100, 30
+            on_release:
+                root.manager.transition.direction = "up"
+                root.close_window()
+        Label:
+            text: '257'
+        Spinner:
+            name: '257'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: '332'
+        Spinner:
+            name: '332'
+            text:''
+            values:'', 'Stay', 'Check Out'
+            size: 100, 11
+            text_autoupdate: True
+            on_text:
+                if self.text == 'Stay': root.addToStays(self.name)
+                elif self.text== 'Check Out': root.addToCheckouts(self.name)
+                else: root.addBlank(self.name)
+
+        Label:
+            text: ''
+        Label:
+            text: ''
